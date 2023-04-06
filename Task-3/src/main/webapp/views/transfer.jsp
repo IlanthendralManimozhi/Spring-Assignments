@@ -4,6 +4,6 @@
 	DebitID:<form:input path="uid2"/><br>
 	Amount:<form:input path="uamount"/><br>
 	
-	<input type="submit" value="click...">
+	<input type="submit" value="Menu">
 	
 </form:form>

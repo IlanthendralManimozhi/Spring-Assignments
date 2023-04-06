@@ -3,5 +3,5 @@
 	<h3>User ID:</h3>${balanceDisplay.uid}<br>
     <h3>User Name:</h3>${balanceDisplay.uname}<br>
     <h3>User Amount:</h3>${balanceDisplay.uamount}<br>
-	<input type="submit" value="click...">	
+	<input type="submit" value="Menu">	
 </form:form>

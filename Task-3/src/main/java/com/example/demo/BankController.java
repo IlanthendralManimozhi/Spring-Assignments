@@ -62,9 +62,9 @@ public class BankController {
 		return mandv;
 	}
 	@RequestMapping(value = "doTransfer",method = RequestMethod.POST)
-	public ModelAndView setTransfer(int uid1,int uid2,int uamount,ModelAndView mandv) {
-		bsi.debit(uid1, uamount);
-		bsi.credit(uid2, uamount);
+	public ModelAndView setTransfer(int uid1,int uid2,int uamount,ModelAndView mandv)throws Exception {
+		bsi.debit(uid2, uamount);
+		bsi.credit(uid1, uamount);
 		mandv.setViewName("transferred");
 		return mandv;
 	}
