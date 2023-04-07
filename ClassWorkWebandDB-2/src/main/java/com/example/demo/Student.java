@@ -3,14 +3,19 @@ package com.example.demo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * This class represents a Student entity, which is stored in a database table.
+ * It has properties for the student's ID, name, age, and city.
+ */
 @Entity
 public class Student {
 	@Id
-   private int sid;
-   private String sname;
-   private int sage;
-	private String scity;
+   private int sid; // The student's ID
+   private String sname; // The student's name
+   private int sage; // The student's age
+   private String scity; // The student's city
 
+   // Getter and setter methods for the properties
 	public int getSid() {
 		return sid;
 	}
@@ -42,5 +47,4 @@ public class Student {
 	public void setScity(String scity) {
 		this.scity = scity;
 	}
-   
 }

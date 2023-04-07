@@ -5,6 +5,6 @@
 	StudentCity:<form:input path="scity"/><br>
 	StudentAge:<form:input path="sage"/><br>
 	
-	<input type="submit" value="click...">
+	<input type="submit" value="submit">
 	
 </form:form>
