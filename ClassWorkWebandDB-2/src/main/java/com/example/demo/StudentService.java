@@ -11,9 +11,9 @@ import java.util.Optional;
  * This class is responsible for handling the business logic for the Student
  * entity.
  */
-@Service("ss")
+@Service("studentService")
 @Transactional
-public class StudentService implements StudentServiceInter {
+public class StudentService implements StudentServiceInterface {
 
 	@Autowired
 	private StudentDAO dao;
@@ -32,7 +32,7 @@ public class StudentService implements StudentServiceInter {
 	 * 
 	 * @return A list of all the students.
 	 */
-	public List getAllStudent() {
+	public List<Student> getAllStudent() {
 		List<Student> list = dao.findAll();
 		return list;
 	}
@@ -43,9 +43,9 @@ public class StudentService implements StudentServiceInter {
 	 * @param id The id of the student to be retrieved.
 	 * @return The student object with the given id.
 	 */
-	public Student getStudentById(int id) {
-		Optional<Student> opt = dao.findById(id);
-		Student student = opt.get();
+	public Student getStudentById(int studentId) {
+		Optional<Student> optional = dao.findById(studentId);
+		Student student = optional.get();
 		return student;
 	}
 
@@ -55,8 +55,8 @@ public class StudentService implements StudentServiceInter {
 	 * @param scity The name of the city to search for.
 	 * @return A list of students from the given city.
 	 */
-	public List<Student> byCity(String scity) {
-		List<Student> list = dao.findByScity(scity);
+	public List<Student> byCity(String studentCity) {
+		List<Student> list = dao.findByStudentCity(studentCity);
 		return list;
 	}
 
@@ -66,8 +66,8 @@ public class StudentService implements StudentServiceInter {
 	 * @param sage The minimum age value to search for.
 	 * @return A list of students whose age is greater than the given value.
 	 */
-	public List<Student> greaterAge(int sage) {
-		List<Student> list = dao.findBySageGreaterThan(sage);
+	public List<Student> greaterAge(int studentAge) {
+		List<Student> list = dao.findByStudentAgeGreaterThan(studentAge);
 		return list;
 	}
 
@@ -77,8 +77,8 @@ public class StudentService implements StudentServiceInter {
 	 * @param scity The name of the city to search for.
 	 * @return A list of students from the given city, sorted by their name.
 	 */
-	public List<Student> sortCity(String scity) {
-		List<Student> list = dao.findByScitySorted(scity);
+	public List<Student> sortCity(String studentCity) {
+		List<Student> list = dao.findByStudentCityOrderByStudentNameAsc(studentCity);
 		return list;
 	}
 }

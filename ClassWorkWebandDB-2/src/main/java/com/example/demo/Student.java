@@ -10,41 +10,43 @@ import javax.persistence.Id;
 @Entity
 public class Student {
 	@Id
-   private int sid; // The student's ID
-   private String sname; // The student's name
-   private int sage; // The student's age
-   private String scity; // The student's city
+	private int studentId; // The student's ID
+	private String studentName; // The student's name
+	private int studentAge; // The student's age
+	private String studentCity; // The student's city
 
-   // Getter and setter methods for the properties
-	public int getSid() {
-		return sid;
+	public int getStudentId() {
+		return studentId;
 	}
 
-	public void setSid(int sid) {
-		this.sid = sid;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
-	public String getSname() {
-		return sname;
+	public String getStudentName() {
+		return studentName;
 	}
 
-	public void setSname(String sname) {
-		this.sname = sname;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
-	public int getSage() {
-		return sage;
+	public int getStudentAge() {
+		return studentAge;
 	}
 
-	public void setSage(int sage) {
-		this.sage = sage;
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
 	}
 
-	public String getScity() {
-		return scity;
+	public String getStudentCity() {
+		return studentCity;
 	}
 
-	public void setScity(String scity) {
-		this.scity = scity;
+	public void setStudentCity(String studentCity) {
+		this.studentCity = studentCity;
 	}
+
+	// Getter and setter methods for the properties
+
 }

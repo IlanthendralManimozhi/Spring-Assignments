@@ -18,7 +18,7 @@ public interface StudentDAO extends JpaRepository<Student, Integer> {
 	 * @param scity the name of the city
 	 * @return a list of students from the city
 	 */
-	public List<Student> findByScity(String scity);
+	public List<Student> findByStudentCity(String studentCity);
 
 	/**
 	 * Retrieves a list of students whose age is greater than the given age.
@@ -26,7 +26,7 @@ public interface StudentDAO extends JpaRepository<Student, Integer> {
 	 * @param sage the age to compare
 	 * @return a list of students whose age is greater than the given age
 	 */
-	public List<Student> findBySageGreaterThan(int sage);
+	public List<Student> findByStudentAgeGreaterThan(int studentAge);
 
 	/**
 	 * Retrieves a list of students by their name.
@@ -34,7 +34,7 @@ public interface StudentDAO extends JpaRepository<Student, Integer> {
 	 * @param sname the name of the student
 	 * @return a list of students with the given name
 	 */
-	public List<Student> findBySname(String sname);
+	public List<Student> findByStudentName(String studentName);
 
 	/**
 	 * Retrieves a sorted list of students by their city.
@@ -42,7 +42,6 @@ public interface StudentDAO extends JpaRepository<Student, Integer> {
 	 * @param city the name of the city
 	 * @return a sorted list of students from the city
 	 */
-	@Query("from Student where scity=?1 order by sname")
-	public List<Student> findByScitySorted(String city);
+	public List<Student> findByStudentCityOrderByStudentNameAsc(String studentCity);
 
 }
