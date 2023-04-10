@@ -16,45 +16,47 @@ public class StudentController {
 	private StudentServiceInterface studentService;
 
 	// Getter and setter methods for StudentServiceInter
-	public StudentServiceInterface getSss() {
+
+	public StudentServiceInterface getStudentService() {
 		return studentService;
 	}
-	public void setSss(StudentServiceInterface studentService) {
+
+	public void setStudentService(StudentServiceInterface studentService) {
 		this.studentService = studentService;
 	}
 
 	// Get a student by ID
-	@RequestMapping(value="getStudent/{id}",method=RequestMethod.GET)
+	@RequestMapping(value = "getStudent/{id}", method = RequestMethod.GET)
 	public Student getStudent(@PathVariable int id) {
-		Student student=studentService.getStudentById(id);
+		Student student = studentService.getStudentById(id);
 		return student;
 	}
 
 	// Get a student by ID using POST method and request body
-	@RequestMapping(value="getStudentbyId",method=RequestMethod.POST)
+	@RequestMapping(value = "getStudentbyId", method = RequestMethod.POST)
 	public Student getStudentById(@RequestBody int id) {
-		Student student=studentService.getStudentById(id);
+		Student student = studentService.getStudentById(id);
 		return student;
 	}
 
 	// Get all students
-	@RequestMapping(value="getStudentAll",method=RequestMethod.POST)
+	@RequestMapping(value = "getStudentAll", method = RequestMethod.POST)
 	public List<Student> getStudentAll() {
-		List<Student> list=studentService.getAllStudent();
+		List<Student> list = studentService.getAllStudent();
 		return list;
 	}
 
 	// Display a form to create a new student
-	@RequestMapping(method=RequestMethod.GET,value="createstudent")
+	@RequestMapping(method = RequestMethod.GET, value = "createstudent")
 	public ModelAndView setStudent(ModelAndView modelAndView) {
-		Student student=new Student();
-		modelAndView.addObject("student",student);
+		Student student = new Student();
+		modelAndView.addObject("student", student);
 		modelAndView.setViewName("form");
 		return modelAndView;
 	}
 
 	// Create a new student using POST method and request body
-	@RequestMapping(method=RequestMethod.POST,value="createstudent")
+	@RequestMapping(method = RequestMethod.POST, value = "createstudent")
 	public void setStudent(Student student) {
 		studentService.studentCreater(student);
 	}
