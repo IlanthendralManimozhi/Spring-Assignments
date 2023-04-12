@@ -9,8 +9,8 @@ import javax.persistence.Table;
 public class Account {
 	@Id
 	private int id;
-	private int acid;
 	private int amount;
+	private int acountId;
 
 	/**
 	 * retrieve the id of object account
@@ -36,7 +36,7 @@ public class Account {
 	 * @return acid
 	 */
 	public int getAcid() {
-		return acid;
+		return acountId;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class Account {
 	 * @param acid
 	 */
 	public void setAcid(int acid) {
-		this.acid = acid;
+		this.acountId = acid;
 	}
 
 	/**

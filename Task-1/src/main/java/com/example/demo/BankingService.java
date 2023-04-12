@@ -5,20 +5,26 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("bs")
+@Service("bankingService")
 @Transactional
 public class BankingService {
 
 	@Autowired
-	private TransactionInter tsi;
+	private TransactionInter transactionService;
 
-	public TransactionInter getTsi() {
-		return tsi;
+	
+
+	public TransactionInter getTransactionService() {
+		return transactionService;
 	}
 
-	public void setTsi(TransactionInter tsi) {
-		this.tsi = tsi;
+
+
+	public void setTransactionService(TransactionInter transactionService) {
+		this.transactionService = transactionService;
 	}
+
+
 
 	/**
 	 * Method passes credit and debit id for specified method in TransactionService
@@ -29,8 +35,8 @@ public class BankingService {
 	 * @throws InsufficientBalance
 	 */
 	public void moneyTransfer(int creditid, int debitid, int amount) throws InsufficientBalance {
-		tsi.credit(creditid, amount);
-		tsi.debit(debitid, amount);
+		transactionService.credit(creditid, amount);
+		transactionService.debit(debitid, amount);
 
 	}
 }

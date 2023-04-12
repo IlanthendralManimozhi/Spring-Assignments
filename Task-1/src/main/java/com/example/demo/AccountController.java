@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/account")
 public class AccountController {
 	@Autowired
-	private BankingService bss;
+	private BankingService bankingService;
 
 	/**
 	 * get the BankingService Object
 	 * 
 	 * @return BankingService object
 	 */
-	public BankingService getBss() {
-		return bss;
+	public BankingService getBankingService() {
+		return bankingService;
 	}
 
 	/**
@@ -26,8 +26,8 @@ public class AccountController {
 	 * 
 	 * @param bss
 	 */
-	public void setBss(BankingService bss) {
-		this.bss = bss;
+	public void setBankingService(BankingService bankingService) {
+		this.bankingService = bankingService;
 	}
 
 	/**
@@ -41,6 +41,7 @@ public class AccountController {
 	@RequestMapping(value = "getAccount/{id1}/{id2}/{amount}", method = RequestMethod.GET)
 	public void doTransfer(@PathVariable int id1, @PathVariable int id2, @PathVariable int amount)
 			throws InsufficientBalance {
-		bss.moneyTransfer(id1, id2, amount);
+		bankingService.moneyTransfer(id1, id2, amount);
 	}
+
 }
