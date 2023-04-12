@@ -24,7 +24,7 @@ public class AccountController {
 	/**
 	 * set current BankingService object
 	 * 
-	 * @param bss
+	 * @param bankingService
 	 */
 	public void setBankingService(BankingService bankingService) {
 		this.bankingService = bankingService;
