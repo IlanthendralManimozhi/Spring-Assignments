@@ -10,8 +10,8 @@ import org.springframework.context.annotation.ComponentScan;
 public class Task1Application {
 
 	public static void main(String[] args) {
-	   SpringApplication.run(Task1Application.class, args);
-		
+		SpringApplication.run(Task1Application.class, args);
+
 	}
 
 }

@@ -10,7 +10,7 @@ public class Account {
 	@Id
 	private int id;
 	private int amount;
-	private int acountId;
+	private int accountId;
 
 	/**
 	 * retrieve the id of object account
@@ -35,8 +35,8 @@ public class Account {
 	 * 
 	 * @return acid
 	 */
-	public int getAcid() {
-		return acountId;
+	public int getAmount() {
+		return amount;
 	}
 
 	/**
@@ -44,8 +44,8 @@ public class Account {
 	 * 
 	 * @param acid
 	 */
-	public void setAcid(int acid) {
-		this.acountId = acid;
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
 	/**
@@ -53,8 +53,8 @@ public class Account {
 	 * 
 	 * @return amount
 	 */
-	public int getAmount() {
-		return amount;
+	public int getAccountId() {
+		return accountId;
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class Account {
 	 * 
 	 * @param amount
 	 */
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 
 }

@@ -12,19 +12,13 @@ public class BankingService {
 	@Autowired
 	private TransactionInter transactionService;
 
-	
-
 	public TransactionInter getTransactionService() {
 		return transactionService;
 	}
 
-
-
 	public void setTransactionService(TransactionInter transactionService) {
 		this.transactionService = transactionService;
 	}
-
-
 
 	/**
 	 * Method passes credit and debit id for specified method in TransactionService
